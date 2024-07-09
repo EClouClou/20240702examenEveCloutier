@@ -9,23 +9,27 @@ export default class Card {
         this.nombre = nombre;
 
         this.pixelssm = pixelssm;
-        this.pixellg = pixellg;
+        this.pixelslg = pixellg;
     }
 
     toCardHtml (){
         const carteHtml = document.createElement('div');
         const nombreHtml = document.createElement('p');
         const pixelssmHtml = document.createElement('p');
-        const pixellgHtml = document.createElement('p');
+        const pixelslgHtml = document.createElement('p');
 
         nombreHtml.textContent = this.nombre;
-        carteHtml.className = 'bg-[#F2E8DF] place-content-center';
+        nombreHtml.classList = 'pb-3'
+        carteHtml.classList = 'carte bg-black h-64 place-content-center rounded-md';
         pixelssmHtml.textContent = this.pixelssm;
-        pixellgHtml.textContent = this.pixellg;
+        pixelssmHtml.classList = 'pixelssm sm:block lg:hidden';
+        pixelslgHtml.textContent = this.pixelslg;
+        pixelslgHtml.classList = 'pixelslg hidden lg:block';
 
         carteHtml.appendChild(nombreHtml);
         carteHtml.appendChild(pixelssmHtml);
-        carteHtml.appendChild(pixellgHtml);
+        carteHtml.appendChild(pixelslgHtml);
+
 
         return carteHtml;
         }
@@ -85,14 +89,18 @@ cards.forEach((card) => {
     cardsContainer.appendChild(card.toCardHtml());
 })
 
-const changeColor = document.querySelector('.change');
-const 
 const btnChange = document.querySelector('.change-vue');
+const body = document.querySelector('body');
+btnChange.addEventListener('click', () => {
 
-btnVue.addEventListener('click', () => {
+    btnChange.classList.toggle('bg-pink');
+    btnChange.classList.toggle('bg-black');
+    body.classList.toggle('bg-black');
+    body.classList.toggle('bg-green');  
 
+    const cards = document.querySelectorAll('.carte');
     cards.forEach((card) => {
-        card.classList.toggle('change-vue');
-        card.classList.toggle('change');
-    });
-})
+            card.classList.toggle('bg-pink');
+            card.classList.toggle('bg-noir');
+        });
+});
