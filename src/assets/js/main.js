@@ -35,6 +35,9 @@ export default class Card {
         }
 }
 
+/**
+ * @type {Card}
+ */
 const cards = [
     new Card(
         '1',
@@ -89,6 +92,9 @@ cards.forEach((card) => {
     cardsContainer.appendChild(card.toCardHtml());
 })
 
+/**
+ * @type {boolean}
+ */
 const btnChange = document.querySelector('.change-vue');
 const body = document.querySelector('body');
 btnChange.addEventListener('click', () => {
@@ -98,6 +104,9 @@ btnChange.addEventListener('click', () => {
     body.classList.toggle('bg-black');
     body.classList.toggle('bg-green');  
 
+    /**
+     * @type {boolean}
+     */
     const cards = document.querySelectorAll('.carte');
     cards.forEach((card) => {
             card.classList.toggle('bg-pink');
