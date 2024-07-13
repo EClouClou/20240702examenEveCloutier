@@ -37,7 +37,8 @@ export default class Card {
 
 
         return carteHtml;
-        }
+        //indentation -0.5
+    }
 }
 
 /**
@@ -112,8 +113,9 @@ btnEfface.addEventListener('click', () => {
     cardsContainer.classList.toggle('hidden');
 })
 
+// Pas le bon type.
 /**
- * @type {boolean}
+ * @type {HTMLElement}
  */
 const btnChange = document.querySelector('.change-vue');
 const body = document.querySelector('body');
@@ -124,12 +126,14 @@ btnChange.addEventListener('click', () => {
     body.classList.toggle('bg-black');
     body.classList.toggle('bg-green');  
 
+    // Pas le bon type. Aucun point ne sera gagné pour le Jsdoc. Il est érroné et peu nombreux
     /**
-     * @type {boolean}
+     * @type {NodeList}
      */
     const cards = document.querySelectorAll('.carte');
     cards.forEach((card) => {
-            card.classList.toggle('bg-pink');
-            card.classList.toggle('bg-noir');
-        });
+        card.classList.toggle('bg-pink');
+        card.classList.toggle('bg-noir');
+        //indentation -0.5
+    });
 });
